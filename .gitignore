@@ -1,0 +1,6 @@
+node_modules/
+mysql/
+
+.env
+.DS_Store
+.vs_code/
