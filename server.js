@@ -1,10 +1,12 @@
-const { decodeBase64 } = require('bcryptjs');
 // Set up Dependencies
 const express = require('express');
 
 // Set up the Express App
 const app = express();
 const PORT = process.env.PORT || 8080;
+
+// Require Models for syncing
+const db = require('./models');
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true}));
