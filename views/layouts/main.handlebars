@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/public/stylesheets/style.css" type="text/css" />
-		<title>Vent</title>
-		{{!-- <script src=" "></script> --}}
-		{{!-- <script src=" "></script> --}}
-	</head>
-	<body>
-		{{{ body }}}
-	</body>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/public/stylesheets/donut.css" type="text/css" />
+    <link rel="stylesheet" href="/public/stylesheets/barchart.css" type="text/css" />
+    <link rel="stylesheet" href="/public/stylesheets/emojis.css" type="text/css" />
+    <link rel="stylesheet" href="/public/stylesheets/style.css" type="text/css" />
+
+    <title>Vent</title>
+    {{<script src="/public/js/map.js"></script>}}
+    {{<script src="/public/js/donutchart.js"></script>}}
+    {{<script src="/public/js/barchart.js"></script>}}
+    {{<script src="/public/js/emojis.js"></script>}}
+
+    {{script}}
+
+</head>
+
+<body>
+{{!-- Charts, feel free to move around --}}
+    <div id="doughnutChart" class="chart"></div>
+    <div id="barChart" class="barchart"></div>
+    <div id="emojis" class="emojis"></div>
+    <div class='mapDiv col s12 m12 l6'> <div id='map'></div></div>
+
+    {{{ body }}}
+</body>
+
+<script src="/public/js/map.js"></script>
+<script defer
+    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDjX4meNopLiNIfOqt3YoVAbCGJhM1xP4s&libraries=visualization&callback=initMap'></script>
+<script src="/public/js/donutchart.js"></script>
+<script src="/public/js/barchart.js"></script>
+<script src="/public/js/emojis.js"></script>
+
 </html>
