@@ -40,6 +40,7 @@ function pinSymbol(color) {
 function printDailyQuakes(event) {
     initMap(event.detail[0].coords[1], event.detail[0].coords[0]);
     for (var i = 0; i < 6; i++) {
+        var heatmapData = [];
         var coords = event.detail[i].coords;
         var text = '5 Most Recent Rumbles - Location: ' + event.detail[i].place + ' Magnitude: ' + event.detail[i].mag + '' + ' Date: ' + event.detail[i].time + ' ';
         var latLng = new google.maps.LatLng(coords[1], coords[0]);
@@ -52,6 +53,13 @@ function printDailyQuakes(event) {
             title: tooltip
         });
         gmarkers.push(marker);
+        heatmapData.push(latLng);
+        var heatmap = new google.maps.visualization.HeatmapLayer({
+            data: heatmapData,
+            dissipating: false,
+            map: map
+          });
+        }
         marker.addListener('click', (function (marker, text) {
             return function (e) {
                 infowindow.setContent(text);
@@ -59,12 +67,13 @@ function printDailyQuakes(event) {
             }
         })(marker, text));
     }
-};
+;
 
 //This is to get data for earthquakes that the user searches for and changes marker color to red.
 function printQuakesBySearch(event) {
     initMap(event.detail[0].coords[1], event.detail[0].coords[0]);
     for (var i = 0; i < event.detail.length; i++) {
+        var heatmapData = [];
         var coords = event.detail[i].coords;
         var text = 'Searched Rumbles - Location: ' + event.detail[i].place + ' Magnitude: ' + event.detail[i].mag + '' + ' Date: ' + event.detail[i].time + ' ';
         var tooltip = text;
@@ -78,6 +87,13 @@ function printQuakesBySearch(event) {
             title: tooltip
         });
         gmarkers.push(marker);
+        heatmapData.push(latLng);
+        var heatmap = new google.maps.visualization.HeatmapLayer({
+            data: heatmapData,
+            dissipating: false,
+            map: map
+          });
+        }
         marker.addListener('click', (function (marker, text) {
             return function (e) {
                 infowindow.setContent(text);
@@ -85,7 +101,7 @@ function printQuakesBySearch(event) {
             }
         })(marker, text));
     }
-};
+;
 
 //This is to remove all markers
 function removeMarker() {
