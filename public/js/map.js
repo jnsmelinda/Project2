@@ -36,6 +36,39 @@ function pinSymbol(color) {
     };
 };
 
+
+var badpollution =
+    ['rgba(	186, 25, 60, 0)',
+        'rgba(186, 25, 60, 3)',
+        'rgba(186, 25, 60, 3)',
+        'rgba(68, 36, 113,1)',
+        'rgba(68, 36, 113,2)',
+        'rgba(255, 0, 0, 1)',]
+
+var goodpollution = [
+'rgba(0, 255, 255, 0)',
+'rgba(155, 248, 244,3)',
+'rgba(34,193,195,2)',
+'rgba(48, 213, 200,1)',
+'rgba(	48, 213, 200,1)',
+
+,
+]
+
+var mediumpollution =
+["rgba(102, 255, 0, 1)",
+"rgba(244, 227, 0, 1)",
+"rgba(249, 198, 0, 1)",
+"rgba(255, 170, 0, 1)",
+"rgba(255, 113, 0, 1)",
+"rgba(255, 57, 0, 1)",
+"rgba(255, 0, 0, 1)"
+
+]
+
+
+
+
 //The below is to place coordinates for the last 5 quakes and changes marker color to blue.
 function printDailyQuakes(event) {
     initMap(event.detail[0].coords[1], event.detail[0].coords[0]);
@@ -56,8 +89,11 @@ function printDailyQuakes(event) {
         heatmapData.push(latLng);
         var heatmap = new google.maps.visualization.HeatmapLayer({
             data: heatmapData,
+            gradient: goodpollution,
             dissipating: false,
             map: map
+
+
           });
         }
         marker.addListener('click', (function (marker, text) {
@@ -91,7 +127,8 @@ function printQuakesBySearch(event) {
         var heatmap = new google.maps.visualization.HeatmapLayer({
             data: heatmapData,
             dissipating: false,
-            map: map
+            map: heatmap,
+            radius: 1
           });
         }
         marker.addListener('click', (function (marker, text) {
