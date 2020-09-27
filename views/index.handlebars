@@ -1,9 +1,54 @@
 <h1>Vent</h1>
 
+
+
+<link rel="stylesheet" href="/public/stylesheets/donut.css" type="text/css" />
+<link rel="stylesheet" href="/public/stylesheets/barchart.css" type="text/css" />
+<link rel="stylesheet" href="/public/stylesheets/emojis.css" type="text/css" />
+<link rel="stylesheet" href="/public/stylesheets/style.css" type="text/css" />
+<link rel="stylesheet" href="/public/stylesheets/aqichart.css" type="text/css" />
+
+<script src="/js/map.js"></script>
+<script src="/js/donutchart.js"></script>
+<script src="/js/barchart.js"></script>
+<script src="/js/emojis.js"></script>
+
+{{!-- Charts, feel free to move around --}}
+<div class="semi-donut margin" style="--percentage : 80; --fill: #FF3D00 ;">
+    Graphs go here
+</div>
+<div id="doughnutChart" class="chart"></div>
+<div id="barChart" class="barchart"></div>
+<div id="emojis" class="emojis"></div>
+<div class='mapDiv col s12 m12 l6'>
+    <div id='map'></div>
+</div>
+
+
+<br>
+
 <form>
     <input type='text' id='location' placeholder='City, State or Zip Code'>
+    <br>
     <br>
     <input type='radio' id='negative' name='feeling' value='negative'>
     <input type='radio' id='neutral' name='feeling' value='neutral'>
     <input type='radio' id='positive' name='feeling' value='positive'>
 </form>
+<br>
+<br>
+<form>
+   <input type='radio' id='cantBreathe' name='breath' value='Can''t Breathe'>
+     <input type='radio' id='canBreathe' name='breath' value='Can Breathe'>
+
+</form>
+
+
+<script src="/public/js/map.js"></script>
+<script defer
+    src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDjX4meNopLiNIfOqt3YoVAbCGJhM1xP4s&libraries=visualization&callback=initMap'></script>
+<script src="/public/js/donutchart.js"></script>
+<script src="/public/js/barchart.js"></script>
+<script src="/public/js/emojis.js"></script>
+
+<body>
