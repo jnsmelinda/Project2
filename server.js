@@ -6,9 +6,6 @@ const getAQIByLocation = require('./aqi.js');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// Require Models for syncing
-// const db = require('./models');
-
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
@@ -21,19 +18,8 @@ const exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-// Routes
-// require('./routes/html-routes.js')(app);
-// require('/routes/api-routes.js')(app);
-
-// Syncing sequelize models and then starting Express App
-// db.sequelize.sync({ force: true }).then(function() {
-//     app.listen(PORT, function() {
-//         console.log('App listening on PORT ' + PORT);
-//     });
-// });
-
 app.get('', function (req, res) {
-    res.send('hello world')
+    res.send('Welcome to the Air Quality app, where you can let your local representative know how you feel about it and leave a short note for them.')
 })
 
 app.get("/api/aqi/:location", (req, res, next) => getAQIByLocation(
