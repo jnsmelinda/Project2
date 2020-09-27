@@ -1,6 +1,5 @@
 // Set up Dependencies
 const express = require('express');
-const getAQIByLocation = require('./aqi.js');
 
 // Set up the Express App
 const app = express();
@@ -13,23 +12,20 @@ app.use(express.json());
 // Static directory
 app.use(express.static('public'));
 
+const db = require("./models");
+
 // Set Handlebars
 const exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-app.get('', function (req, res) {
-    res.send('Welcome to the Air Quality app, where you can let your local representative know how you feel about it and leave a short note for them.')
-})
+// Routes
+require("./routes/html-routes.js")(app);
+// require("./routes/api-routes.js")(app);
 
-app.get("/api/aqi/:location", (req, res, next) => getAQIByLocation(
-    req.params.location,
-    (err, aqi) => {
-        if (err) next(error);
-        else res.json({aqi: aqi})
-    }
-));
-
-app.listen(PORT, function() {
-    console.log('App listening on PORT ' + PORT);
-});
+// Syncing our sequelize models and then starting our Express app
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(PORT, function() {
+      console.log("App listening on PORT " + PORT);
+    });
+  });
