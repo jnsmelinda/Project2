@@ -1,6 +1,4 @@
-h1 {
-
-
+.navbar-brand { font-size: 75px;
 }
 
 li {
@@ -9,6 +7,11 @@ li {
     background: #faebd7;
     list-style-type: none;
   }
+
+h3 {
+text-align: left;
+
+}
 
   .label {
     font-weight: bold;
@@ -37,3 +40,26 @@ li {
     width: 50%;
 
   }
+
+
+  .sidebar {
+    position: fixed;
+    width: 350px;
+    height: 100%;
+    background: rgb(109, 122, 134);
+
+  }
+
+.content {
+    margin-left: 200px;
+    height: 600px;
+    width: auto;
+    position: block;
+    background-image: linear-gradient(to right, rgba(61,99,246, .5),  rgba(0,196,204 ),rgba(107,213,227) );
+}
+.info {
+    width: auto;
+    height: 325px;
+    position: block;
+    background: white;
+}
