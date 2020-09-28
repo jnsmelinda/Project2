@@ -1,52 +1,81 @@
-
-
 <nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">WORDS</a>
+    <a class="navbar-brand" href="#">V E N T</a>
 </nav>
+<div class="sidebar">
 
-<h1>Vent</h1>
-<h2>Clear the Air with your Representative </h2>
-<body>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="/assets/css/donut.css" type="text/css" />
-<link rel="stylesheet" href="/assets/css/barchart.css" type="text/css" />
-<link rel="stylesheet" href="/assets/css/emojis.css" type="text/css" />
-<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+    <h3> CLEAR THE AIR</h3>
+    <h3> WITH YOUR REPRESENTATIVE</h3>
+
+    <body>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="/assets/css/donut.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/barchart.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/emojis.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
 
 
-<script src="/assets/js/map.js"></script>
-<script src="/assets/js/donutchart.js"></script>
-<script src="/assets/js/barchart.js"></script>
-<script src="/assets/js/emojis.js"></script>
 
-{{!-- Charts, feel free to move around --}}
-<div class="semi-donut margin" style="--percentage : 80; --fill: #FF3D00 ;">
-    Graphs go here
+        <script src="/public/assets/js/map.js"></script>
+        <script src="/public/assets/js/donutchart.js"></script>
+        <script src="/public/assets/js/barchart.js"></script>
+        <script src="/public/assets/js/emojis.js"></script>
+
+
+        <br>
+        <br>
+
+        <form>
+            <h4>location Search Function Here</h4>
+            <input type='text' id='location' placeholder='City, State or Zip Code'>
+            <br>
+            <br>
+
+            <br>
+        </form>
+        <h4>How ya Feeling goes here</h4>
+        <form id="smileys">
+            <input type="radio" name="smiley" value="sad" class="sad">
+            <input type="radio" name="smiley" value="neutral" class="neutral">
+            <input type="radio" name="smiley" value="happy" class="happy" checked="checked">
+            <div>It looks like you're feeling <span id="result">happy</span> today..</div>
+
+            <br>
+            <br>
+            <h4>How ya Breathin goes here</h4>
+            <form>
+                <input type='radio' id='cantBreathe' name='breath' value='Can''t Breathe'>
+                <input type='radio' id='canBreathe' name='breath' value='Can Breathe'>
+
+            </form>
+
+
+        </form>
+
+        <div class="semi-donut margin" style="--percentage : 80; --fill: #FF3D00 ;">
+            <br>
+            <h4>Graphs go here</h4>
+        </div>
+        <div id="doughnutChart" class="chart"></div>
+        <div id="barChart" class="barchart"></div>
+        <div id="emojis" class="emojis"></div>
+
 </div>
-<div id="doughnutChart" class="chart"></div>
-<div id="barChart" class="barchart"></div>
-<div id="emojis" class="emojis"></div>
-<div class='mapDiv col s12 m12 l6'>
-    <div id='map'></div>
+
+<div class="content">
+    mappy map goes here
+    <div class='mapDiv col s12 m12 l6'>
+        <div id='map'></div>
+    </div>
 </div>
 
-<br>
-<form>
-    <input type='text' id='location' placeholder='City, State or Zip Code'>
-    <br>
-    <br>
-    <input type='radio' id='negative' name='feeling' value='negative'>
-    <input type='radio' id='neutral' name='feeling' value='neutral'>
-    <input type='radio' id='positive' name='feeling' value='positive'>
-</form>
-<br>
-<br>
-<form>
-   <input type='radio' id='cantBreathe' name='breath' value='Can''t Breathe'>
-     <input type='radio' id='canBreathe' name='breath' value='Can Breathe'>
 
-</form>
 
+<div class="info">
+    All Data goes here..data....data...more dataaaaaaaaaaaaaaaaaaaaaaa.... you get the idea
+
+
+</div>
 
 <script src="/assets/js/map.js"></script>
 <script defer
@@ -54,5 +83,6 @@
 <script src="/assets/js/donutchart.js"></script>
 <script src="/assets/js/barchart.js"></script>
 <script src="/assets/js/emojis.js"></script>
+
 
 </body>
