@@ -1,3 +1,5 @@
+
+
 $(document).ready(getAQI);
 
 function getAQI() {
