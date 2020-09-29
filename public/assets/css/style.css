@@ -63,3 +63,9 @@ text-align: left;
     position: block;
     background: white;
 }
+/* Results from Google Map API */
+#map {
+    height: 574px;
+    border: solid black;
+    width: 100%;
+}
