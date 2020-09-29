@@ -5,14 +5,112 @@ document.addEventListener('quakesBySearch', printQuakesBySearch, false);
 //This sets map formatting and recenters map to new area once searched.
 var map;
 var infowindow;
-function initMap(lat = 39.8283, lon = -99.5795) {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: new google.maps.LatLng(lat, lon),
-        zoom: 5,
-        mapTypeId: 'terrain'
+    // Create a new StyledMapType object, passing it an array of styles,
+    // and the name to be displayed on the map type control.
+    function initMap() {
+        // Styles a map in night mode.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 47.6062, lng: -122.3321},
+          zoom: 12,
+          styles: [
+            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {
+              featureType: 'administrative.locality',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{color: '#263c3f'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#6b9a76'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{color: '#38414e'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#212a37'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#9ca5b3'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{color: '#746855'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#1f2835'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#f3d19c'}]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{color: '#2f3948'}]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#d59563'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{color: '#17263c'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#515c6d'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{color: '#17263c'}]
+            }
+          ]
+        });
+      }
+
+    // Create a map object, and include the MapTypeId to add
+    // to the map type control.
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 55.647, lng: 37.581},
+      zoom: 11,
+      mapTypeControlOptions: {
+        mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
+                'styled_map']
+      }
     });
-    infowindow = new google.maps.InfoWindow();
-}
+
+    //Associate the styled map with the MapTypeId and set it to display.
+    map.mapTypes.set('styled_map', styledMapType);
+    map.setMapTypeId('styled_map');
+
+
 //Used to remove markers/old searches.
 var gmarkers = [];
 document.getElementById('clearButton').addEventListener('click', function () {
