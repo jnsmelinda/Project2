@@ -6,53 +6,54 @@
     <h3> CLEAR THE AIR</h3>
     <h3> WITH YOUR REPRESENTATIVE</h3>
 
-        <br>
+    <br>
+    <br>
+
+    <form id="location">
+        <h4>Where do you want to Search?</h4>
+        <input type='text' id='location' placeholder='City or Zip Code'>
+        <input type="submit" id='locationsubmit' value="Submit">
+    </form>
+    <br>
+
+    <br>
+
+    <h4>How ya Feelin?</h4>
+    <form id="smileys">
+        <input type="radio" name="smiley" value="sad" class="sad">
+        <input type="radio" name="smiley" value="neutral" class="neutral">
+        <input type="radio" name="smiley" value="happy" class="happy" checked="checked">
+        <div>It looks like you're feeling <span id="result">happy</span> today..</div>
+    </form>
+    <br>
+    <br>
+
+    <form id="breathes">
+        <h4>How ya Breathin?</h4>
+        <input type="radio" name="breathe" value="cant" class="cant">
+        <input type="radio" name="breathe" value="can" class="can" checked="checked">
+    </form>
+    </form>
+    <form id="message">
+        <h4>Clear the air with your Senator?</h4>
+        <input type='text' id='messagebox' placeholder='Hello, Senator'>
+        <input type="submit" id='msgSubmit' value="Submit">
         <br>
 
-        <form>
-            <h4>Where you want to Search?s</h4>
-            <input type='text' id='location' placeholder='City, State or Zip Code'>
-            <input type="submit" id = 'locationsubmit' value="Submit">
-            <br>
-            <br>
-            <br>
-        </form>
-        <h4>How ya Feeling goes here</h4>
-        <form id="smileys">
-            <input type="radio" name="smiley" value="sad" class="sad">
-            <input type="radio" name="smiley" value="neutral" class="neutral">
-            <input type="radio" name="smiley" value="happy" class="happy" checked="checked">
-            <div>It looks like you're feeling <span id="result">happy</span> today..</div>
-            </form>
-            <br>
-            <br>
-            <h4>How ya Breathin goes here</h4>
-        <form id="breathes">
-            <input type="radio" name="breathe" value="cant" class="cant">
-            <input type="radio" name="breathe" value="can" class="can" checked="checked">
-            </form>
-        </form>
-<form>
-            <h4>Clear the air with your Senator?</h4>
-            <input type='text' id='messagebox' placeholder='Hello, Senator'>
-            <input type="submit" id = 'msgSubmit' value="Submit">
-            <br>
-            <br>
-            <br>
-        </form>
-<div class="semi-donut margin" style="--percentage : 80; --fill: #FF3D00 ;">
-            <br>
-            <h4>Graphs go here</h4>
-        </div>
-        {{!-- <div id="doughnutChart" class="chart"></div>  --}}
+    </form>
+    <div class="semi-donut margin" style="--percentage : 80; --fill: #FF3D00 ;">
+        <br>
+        <h4>Graphs go here</h4>
+    </div>
+    {{!-- <div id="doughnutChart" class="chart"></div>  --}}
 </div>
 
 
 <div class="content">
     mappy map goes here
-    <div class='mapDiv col s12 m12 l6'>
-        <div id='map'></div>
-    </div>
+
+    <div id='map'></div>
+</div>
 </div>
 
 <div class="info">
