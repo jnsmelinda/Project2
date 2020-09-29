@@ -10,11 +10,11 @@
         <br>
 
         <form>
-            <h4>location Search Function Here</h4>
+            <h4>Where you want to Search?s</h4>
             <input type='text' id='location' placeholder='City, State or Zip Code'>
+            <input type="submit" id = 'locationsubmit' value="Submit">
             <br>
             <br>
-
             <br>
         </form>
         <h4>How ya Feeling goes here</h4>
@@ -30,20 +30,23 @@
         <form id="breathes">
             <input type="radio" name="breathe" value="cant" class="cant">
             <input type="radio" name="breathe" value="can" class="can" checked="checked">
-
             </form>
-
-
         </form>
-
-        <div class="semi-donut margin" style="--percentage : 80; --fill: #FF3D00 ;">
+<form>
+            <h4>Clear the air with your Senator?</h4>
+            <input type='text' id='messagebox' placeholder='Hello, Senator'>
+            <input type="submit" id = 'msgSubmit' value="Submit">
+            <br>
+            <br>
+            <br>
+        </form>
+<div class="semi-donut margin" style="--percentage : 80; --fill: #FF3D00 ;">
             <br>
             <h4>Graphs go here</h4>
         </div>
-        <div id="doughnutChart" class="chart"></div>
-        <div id="barChart" class="barchart"></div>
-        <div id="emojis" class="emojis"></div>
+        {{!-- <div id="doughnutChart" class="chart"></div>  --}}
 </div>
+
 
 <div class="content">
     mappy map goes here
