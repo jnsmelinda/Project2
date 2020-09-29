@@ -41,7 +41,6 @@ text-align: left;
 
   }
 
-
   .sidebar {
     position: fixed;
     width: 350px;
@@ -51,6 +50,7 @@ text-align: left;
   }
 
 .content {
+    margin-left: 200px;
     margin-left: 200px;
     height: 600px;
     width: auto;
@@ -65,7 +65,11 @@ text-align: left;
 }
 /* Results from Google Map API */
 #map {
-    height: 574px;
+    margin-left: 150px;
+    margin-top: 150 px;
+
+    height: 550px;
     border: solid black;
-    width: 100%;
+    position: block;
+    width: auto;
 }
