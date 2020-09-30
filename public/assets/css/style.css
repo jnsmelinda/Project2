@@ -1,0 +1,75 @@
+.navbar-brand { font-size: 75px;
+}
+
+li {
+    padding: 5px;
+    margin: 5px;
+    background: #faebd7;
+    list-style-type: none;
+  }
+
+h3 {
+text-align: left;
+
+}
+
+  .label {
+    font-weight: bold;
+  }
+
+  .create-update-form {
+    padding: 5px;
+    margin: 5px;
+    background: aqua;
+  }
+
+  .form-group {
+    margin-bottom: 5px;
+  }
+
+  body {
+    text-align: center;
+    background-image: linear-gradient(to right, rgba(61,99,246, .5),  rgba(0,196,204 ),rgba(107,213,227) );
+  }
+  form {
+    display: inline-block;
+  }
+
+  img {
+    height: 250px;
+    width: 50%;
+
+  }
+
+  .sidebar {
+    position: fixed;
+    width: 350px;
+    height: 100%;
+    background: rgb(109, 122, 134);
+
+  }
+
+.content {
+    margin-left: 200px;
+    margin-left: 200px;
+    height: 800px;
+    width: auto;
+    position: block;
+    background-image: linear-gradient(to right, rgba(61,99,246, .5),  rgba(0,196,204 ),rgba(107,213,227) );
+}
+.info {
+    width: auto;
+    height: 325px;
+    position: block;
+    background: white;
+}
+/* Results from Google Map API */
+#map {
+    margin-left: 200px;
+    margin-right: 60px;
+
+    height: 700px;
+    border: solid black;
+    position: block;
+    width: auto;
+}
