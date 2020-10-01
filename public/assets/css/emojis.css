@@ -26,11 +26,11 @@
     background-size: cover;
   }
   form#smileys input[type="radio"].neutral {
-    background: url(/assets/img/Neutral.PNG) center;
+    background: url(/assets/img/Neutral.png) center;
     background-size: cover;
   }
   form#smileys input[type="radio"].sad {
-    background: url(/assets/img/Negative.PNG) center;
+    background: url(/assets/img/Negative.png) center;
     background-size: cover;
 
   }
