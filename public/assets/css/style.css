@@ -76,7 +76,17 @@ h4 {
 #map {
     margin-left: 200px;
     margin-right: 60px;
+
     height: 560px;
+
+    border: solid black;
+    position: block;
+    width: auto;
+}
+
+#civic-text {
+    margin-left: 200px;
+    margin-right: 60px;
     border: solid black;
     position: block;
     width: auto;
