@@ -8,9 +8,17 @@ li {
     list-style-type: none;
   }
 
+h2 {
+    text-align: left;
+}
+
 h3 {
 text-align: left;
 
+}
+
+h4 {
+    font-size: 20px;
 }
 
   .label {
@@ -36,14 +44,14 @@ text-align: left;
   }
 
   img {
-    height: 250px;
+    height: 100px;
     width: 50%;
 
   }
 
   .sidebar {
     position: fixed;
-    width: 350px;
+    width: 320px;
     height: 100%;
     background: rgb(109, 122, 134);
 
@@ -51,9 +59,9 @@ text-align: left;
 
 .content {
     margin-top: 20px;
-    margin-left: 200px;
-
-    height: 800px;
+    margin-left: 180px;
+    margin-bottom: 20px;
+    height: 600px;
     width: auto;
     position: block;
     background-image: linear-gradient(to right, rgba(61,99,246, .5),  rgba(0,196,204 ),rgba(107,213,227) );
@@ -61,15 +69,14 @@ text-align: left;
 .info {
     width: auto;
     height: 325px;
-    position: block;
+    position: inline-block;
     background: white;
 }
 /* Results from Google Map API */
 #map {
     margin-left: 200px;
     margin-right: 60px;
-
-    height: 700px;
+    height: 560px;
     border: solid black;
     position: block;
     width: auto;
