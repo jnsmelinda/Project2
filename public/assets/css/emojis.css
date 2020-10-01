@@ -22,7 +22,7 @@
   }
 
   form#smileys input[type="radio"].happy {
-    background: url(/assets/img/Happy.PNG) center;
+    background: url(/assets/img/Happy.png) center;
     background-size: cover;
   }
   form#smileys input[type="radio"].neutral {
