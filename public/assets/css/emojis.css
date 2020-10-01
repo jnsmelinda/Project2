@@ -15,6 +15,10 @@
   form#smileys input[type="radio"]:hover, form#smileys input[type="radio"]:checked {
     -webkit-filter: grayscale(0);
             filter: grayscale(0);
+
+            outline-color: -webkit-focus-ring-color;
+            outline-style: auto;
+
   }
 
   form#smileys input[type="radio"].happy {
@@ -28,6 +32,6 @@
   form#smileys input[type="radio"].sad {
     background: url(/assets/img/Negative.PNG) center;
     background-size: cover;
-    height: 200 px;
+
   }
 

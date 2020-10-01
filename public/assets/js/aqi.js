@@ -15,5 +15,6 @@ function getAQI() {
 document.addEventListener('getAQI', printAQI, false);
 
 function printAQI(event) {
+
     console.log(event.detail);
 }

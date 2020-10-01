@@ -15,6 +15,9 @@
   form#breathes input[type="radio"]:hover, form#breathes input[type="radio"]:checked {
     -webkit-filter: grayscale(0);
             filter: grayscale(0);
+            outline-color: -webkit-focus-ring-color;
+            outline-style: auto;
+
   }
 
   form#breathes input[type="radio"].cant {
