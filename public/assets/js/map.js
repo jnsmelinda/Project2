@@ -73,7 +73,8 @@ function printAQI(event) {
             data: heatmapData,
             dissipating: false,
             map: map,
-            radius: 0.5,
+            radius: 0.1,
+            opacity: 0.09,
             zoom: 12,
         });
 
