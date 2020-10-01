@@ -50,12 +50,12 @@ var mediumpollution = ["rgba(102, 255, 0, 1)", "rgba(244, 227, 0, 1)", "rgba(249
 
 
 
+
 //The below is to place coordinates for the last 5 quakes and changes marker color to blue.
 function printAQI(event) {
     initMap(event.detail.aqi.latitude, event.detail.aqi.longitude);
     for (var i = 0; i < 6; i++) {
         var heatmapData = [];
-
         var text = 'AQI ' + event.detail.aqi.aqi;
         var latLng = new google.maps.LatLng(event.detail.aqi.latitude, event.detail.aqi.longitude);
         var tooltip = text;
@@ -68,6 +68,13 @@ function printAQI(event) {
         });
         gmarkers.push(marker);
 
+        heatmapData.push(latLng);
+        var heatmap = new google.maps.visualization.HeatmapLayer({
+            data: heatmapData,
+            dissipating: false,
+            map: heatmap,
+            radius: 1
+        });
 
         }
         marker.addListener('click', (function (marker, text) {
