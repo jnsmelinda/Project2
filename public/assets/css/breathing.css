@@ -1,8 +1,8 @@
 
   form#breathes input[type="radio"] {
     -webkit-appearance: none;
-    width: 90px;
-    height: 150px;
+    width: 70px;
+    height: 120px;
     border: none;
     cursor: pointer;
     -webkit-transition: border 0.2s ease;
@@ -15,14 +15,17 @@
   form#breathes input[type="radio"]:hover, form#breathes input[type="radio"]:checked {
     -webkit-filter: grayscale(0);
             filter: grayscale(0);
+            outline-color: -webkit-focus-ring-color;
+            outline-style: auto;
+
   }
 
   form#breathes input[type="radio"].cant {
-    background: url(/assets/img/cantbreathe.png) center;
+    background: url(/assets/img/cantbreathe.PNG) center;
     background-size: cover;
   }
   form#breathes input[type="radio"].can {
-    background: url(/assets/img/canbreathe.png) center;
+    background: url(/assets/img/canbreathe.PNG) center;
     background-size: cover;
   }
 

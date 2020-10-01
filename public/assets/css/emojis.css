@@ -1,8 +1,8 @@
 
   form#smileys input[type="radio"] {
     -webkit-appearance: none;
-    width: 90px;
-    height: 150px;
+    width: 70px;
+    height: 120px;
     border: none;
     cursor: pointer;
     -webkit-transition: border 0.2s ease;
@@ -15,19 +15,23 @@
   form#smileys input[type="radio"]:hover, form#smileys input[type="radio"]:checked {
     -webkit-filter: grayscale(0);
             filter: grayscale(0);
+
+            outline-color: -webkit-focus-ring-color;
+            outline-style: auto;
+
   }
 
   form#smileys input[type="radio"].happy {
-    background: url(/assets/img/Happy.png) center;
+    background: url(/assets/img/Happy.PNG) center;
     background-size: cover;
   }
   form#smileys input[type="radio"].neutral {
-    background: url(/assets/img/Neutral.png) center;
+    background: url(/assets/img/Neutral.PNG) center;
     background-size: cover;
   }
   form#smileys input[type="radio"].sad {
-    background: url(/assets/img/Negative.png) center;
+    background: url(/assets/img/Negative.PNG) center;
     background-size: cover;
-    height: 200 px;
+
   }
 
