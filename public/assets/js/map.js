@@ -72,8 +72,9 @@ function printAQI(event) {
         var heatmap = new google.maps.visualization.HeatmapLayer({
             data: heatmapData,
             dissipating: false,
-            map: heatmap,
-            radius: 1
+            map: map,
+            radius: 0.5,
+            zoom: 12,
         });
 
         }
