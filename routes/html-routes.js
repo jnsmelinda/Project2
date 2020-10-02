@@ -8,6 +8,10 @@ module.exports = function(app) {
       res.render("index");
     });
 
+    app.post("/", function(req, res) {
+        res.render("index", {location: req.body.location});
+    });
+
     app.get("/civic", function(req, res) {
       res.render("civic");
     });

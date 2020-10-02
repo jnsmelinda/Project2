@@ -8,10 +8,10 @@
         <br>
 
   <div class= "wrapper">
-        <form id="location">
+        <form id="location-form" action="/" method="POST">
             <h4>Where do you want to Search?</h4>
-            <input type='text' id='location' placeholder='City or Zip Code'>
-            <input type="submit" id='locationsubmit' value="Submit">
+            <input id="location" name="location" type='text' placeholder='City or Zip Code' value="{{location}}">
+            <button type="submit">Submit</button>
         </form>
           </div>
         <br>
