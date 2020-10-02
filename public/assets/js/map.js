@@ -1,4 +1,3 @@
-
 //Gets Air Quality Index and Coordinates
 document.addEventListener("getAQI", printAQI, false);
 
@@ -19,7 +18,7 @@ const gmarkers = [];
 function pinSymbol(color) {
   return {
     path:
-      "M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0",
+            "M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0",
     fillColor: color,
     fillOpacity: 1,
     strokeColor: "#000",
@@ -27,7 +26,6 @@ function pinSymbol(color) {
     scale: 1
   };
 }
-
 
 //Pollution Gradients
 const badpollution = [
@@ -60,11 +58,30 @@ function printAQI(event) {
   initMap(event.detail.aqi.latitude, event.detail.aqi.longitude);
   for (let i = 0; i < 6; i++) {
     const heatmapData = [];
-    const text = "AQI " + event.detail.aqi.aqi;
+    let pollutioncircle = [];
+    let rating = [];
+    if (event.detail.aqi.aqi <= 40) {
+      rating = "Good";
+      pollutioncircle = "goodpollution";
+    } else if (event.detail.aqi.aqi >= 41) {
+      rating = "Unhealthy";
+      pollutioncircle = "mediumpollution";
+    } else {
+      rating = "Hazerdous";
+      pollutioncircle = "badpollution";
+    }
+    const text =
+            "AQI: " +
+            event.detail.aqi.aqi +
+            " Rating: " +
+            rating +
+            " " +
+            pollutioncircle;
     const latLng = new google.maps.LatLng(
       event.detail.aqi.latitude,
       event.detail.aqi.longitude
     );
+
     const tooltip = text;
     const marker = new google.maps.Marker({
       position: latLng,
@@ -74,22 +91,25 @@ function printAQI(event) {
       title: tooltip
     });
     gmarkers.push(marker);
-    marker.addListener('click', (function (marker, text) {
-        return function (e) {
-            infowindow.setContent(text);
-            infowindow.open(map, marker);
-        }
-    })(marker, text));
+    marker.addListener(
+      "click",
+      (function(marker, text) {
+        return function(e) {
+          infowindow.setContent(text);
+          infowindow.open(map, marker);
+        };
+      })(marker, text)
+    );
     heatmapData.push(latLng);
+    pollution.push(pollutioncircle);
     const heatmap = new google.maps.visualization.HeatmapLayer({
       data: heatmapData,
       dissipating: false,
       map: map,
-      gradient: goodpollution,
+      gradient: pollution,
       radius: 0.03,
       opacity: 0.09,
       zoom: 12
     });
-}
   }
-
+}
