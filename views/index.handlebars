@@ -1,13 +1,11 @@
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">V E N T</a>
 </nav>
-
 <body>
     <div class="sidebar">
         <h2> CLEAR THE AIR</h2>
         <h3> WITH YOUR REPRESENTATIVE</h3>
         <br>
-
         <div class="wrapper">
             <form id="location-form" action="/" method="POST">
                 <h4>Where do you want to Search?</h4>
@@ -21,15 +19,16 @@
             <input id="location-feedback" name="location" type="hidden" value="{{location}}">
             <input id="aqi" name="aqi" type="hidden">
             <input id="name" name="name" type="hidden" value="unkown">
-            <input type="radio" id = 'emotion' name="smiley" value="sad" class="sad" checked="checked" onclick="displayEmojiValue()">
-            <input type="radio" id = 'emotion' name="smiley" value="neutral" class="neutral" onclick="displayEmojiValue()">
-            <input type="radio" id = 'emotion' name="smiley" value="happy" class="happy" onclick="displayEmojiValue()">
+            <input type="radio" name="emotion" value="sad" class="sad" checked="checked" onclick="displayEmojiValue()">
+            <input type="radio" name="emotion" value="neutral" class="neutral" onclick="displayEmojiValue()">
+            <input type="radio" name="emotion" value="happy" class="happy" onclick="displayEmojiValue()">
             <div>It looks like you're feeling <span id="result">happy</span> today..</div>
             <br>
+            <br>
             <h4>How ya Breathin?</h4>
-            <input type="radio" name="breathe" value="cant" class="cant" onclick="displayBreatheValue()">
-            <input type="radio" name="breathe" value="can" class="can" checked="checked" onclick="displayBreatheValue()">
-            <div>It looks like you <span id="result2">cant</span> breathe today..</div>
+            <input type="radio" name="breathe" value="cant" class="cant"onclick="displayBreatheValue()">
+            <input type="radio" name="breathe" value="can" class="can" checked="checked"onclick="displayBreatheValue()">
+            <div>It looks like you <span id="result2">can</span> breathe today..</div>
             <br>
             <h4>Clear the air with your Senator?</h4>
             <textarea id='messageBox' name='message' rows='4' cols='25'>Hello, Senator...</textarea>
@@ -38,7 +37,6 @@
             <br>
         </form>
     </div>
-
     <div class="content">
         <div id='map'></div>
         <div class="info">
