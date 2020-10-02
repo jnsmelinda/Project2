@@ -16,6 +16,7 @@ function initMap(lat = 47.6062, lon = -122.3321) {
 }
 //Sets up marker pin info except for color.
 const gmarkers = [];
+
 function pinSymbol(color) {
   return {
     path:
@@ -85,13 +86,4 @@ function printAQI(event) {
       zoom: 12
     });
   }
-  marker.addListener(
-    "click",
-    (function(marker, text) {
-      return function() {
-        infowindow.setContent(text);
-        infowindow.open(map, marker);
-      };
-    })(marker, text)
-  );
 }
