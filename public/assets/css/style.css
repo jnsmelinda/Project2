@@ -61,7 +61,7 @@ h4 {
     position: absolute;
     top: 138px;
     width: 320px;
-    height: 100%;
+    height: auto;
     background: rgb(109, 122, 134);
 
   }
