@@ -5,7 +5,6 @@
     <div class="sidebar">
         <h2> CLEAR THE AIR</h2>
         <h3> WITH YOUR REPRESENTATIVE</h3>
-        <br>
         <div class="wrapper">
             <form id="location-form" action="/" method="POST">
                 <h4>Where do you want to Search?</h4>
@@ -24,7 +23,6 @@
             <input type="radio" name="emotion" value="happy" class="happy" onclick="displayEmojiValue()">
             <div>It looks like you're feeling <span id="result">happy</span> today..</div>
             <br>
-            <br>
             <h4>How ya Breathin?</h4>
             <input type="radio" name="breathe" value="cant" class="cant"onclick="displayBreatheValue()">
             <input type="radio" name="breathe" value="can" class="can" checked="checked"onclick="displayBreatheValue()">
@@ -38,7 +36,9 @@
         </form>
     </div>
     <div class="content">
-        <div id='map'></div>
+        <div id='map'>
+            <div id = 'mapresults'>Getting Data.....<span id="mapresult"></span> </div>
+        </div>
         <div class="info">
             <div class="charts">
                 Graphs

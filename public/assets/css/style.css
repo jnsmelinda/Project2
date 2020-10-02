@@ -104,6 +104,12 @@ h4 {
     width: auto;
 }
 
+#mapresults {
+    text-align: center;
+    color: white;
+    margin-top: 150px;
+}
+
 #civic-text {
     margin-left: 200px;
     margin-right: 60px;
