@@ -1,4 +1,4 @@
-.navbar-brand { font-size: 75px;
+.navbar-brand { font-size: 60px;
 }
 
 button {
@@ -18,78 +18,88 @@ li {
 
 h2 {
     text-align: left;
+    margin-left: 10px;
 }
-
 h3 {
 text-align: left;
-
+margin-left: 10px;
 }
-
 h4 {
     font-size: 20px;
+    text-align: center;
 }
-
   .label {
     font-weight: bold;
   }
-
   .create-update-form {
     padding: 5px;
     margin: 5px;
     background: aqua;
   }
-
   .form-group {
     margin-bottom: 5px;
   }
-
   body {
-    text-align: center;
+      text-align: center;
     background-image: linear-gradient(to right, rgba(61,99,246, .5),  rgba(0,196,204 ),rgba(107,213,227) );
   }
   form {
     display: inline-block;
   }
-
   img {
     height: 100px;
     width: 50%;
 
   }
-
   .sidebar {
     position: absolute;
-    top: 138px;
+    top: 116px;
     width: 320px;
-    height: auto;
+    height: 200%;
     background: rgb(109, 122, 134);
-
   }
-
+  .wrapper {
+      text-align: center;
+      margin-left: 10px;
+  }
+  .messagebox {
+      text-align: center;
+  }
 .content {
     margin-top: 20px;
-    margin-left: 180px;
-    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 20px;
+    margin-bottom: 35px;
     height: 600px;
     width: auto;
     position: block;
-    background-image: linear-gradient(to right, rgba(61,99,246, .5),  rgba(0,196,204 ),rgba(107,213,227) );
 }
+
 .info {
     width: auto;
-    height: 325px;
+    height: 400px;
+    position: inline-block;
+    background: grey;
+    margin-left: 180px;
+    margin-right: 8px;
+}
+
+.charts {
+    width: auto;
+    height: 200px;
     position: inline-block;
     background: white;
 }
+
 /* Results from Google Map API */
 #map {
-    margin-left: 200px;
-    margin-right: 60px;
-
-    height: 560px;
-
-    border: solid black;
+    margin-top: 20px;
+    margin-left: 180px;
+    margin-bottom: 20px;
     position: block;
+    height: 400px;
+    border: solid black;
+    position: inline-block;
     width: auto;
 }
 

@@ -1,56 +1,58 @@
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">V E N T</a>
 </nav>
-<div class="sidebar">
-
-    <h2> CLEAR THE AIR</h2>
-    <h3> WITH YOUR REPRESENTATIVE</h3>
-<br>
-    <form id="location">
-        <h4>Where do you want to Search?</h4>
-        <input type='text' id='location' placeholder='City or Zip Code'>
-        <input type="submit" id='locationsubmit' value="Submit">
-    </form>
-<br>
-<br>
-    <h4>How ya Feelin?</h4>
-<form id="smileys">
-	<input type="radio" name="smiley" value="sad" class="sad" checked="checked">
-	<input type="radio" name="smiley" value="neutral" class="neutral">
-	<input type="radio" name="smiley" value="happy" class="happy" >
-	<div>It looks like you're feeling <span id="result">happy</span> today..</div>
-</form>
-    </form>
-    <br>
-    <br>
-
-    <form id="breathes">
-        <h4>How ya Breathin?</h4>
-        <input type="radio" name="breathe" value="cant" class="cant">
-        <input type="radio" name="breathe" value="can" class="can" checked="checked">
-    </form>
-    </form>
-    <form id="message">
-        <h4>Clear the air with your Senator?</h4>
-        <textarea id='messageBox' name='message' rows='4' cols='25'>Hello, Senator...</textarea>
-        <br>
-        <input type="submit" id='msgSubmit' value="Submit">
+<body>
+    <div class="sidebar">
+        <h2> CLEAR THE AIR</h2>
+        <h3> WITH YOUR REPRESENTATIVE</h3>
         <br>
 
-    </form>
-    <div class="semi-donut margin" style="--percentage : 80; --fill: #FF3D00 ;">
+  <div class= "wrapper">
+        <form id="location">
+            <h4>Where do you want to Search?</h4>
+            <input type='text' id='location' placeholder='City or Zip Code'>
+            <input type="submit" id='locationsubmit' value="Submit">
+        </form>
+          </div>
         <br>
-        <h4>Graphs go here</h4>
+        <h4>How ya Feelin?</h4>
+        <form id="smileys">
+            <input type="radio" name="smiley" value="sad" class="sad" checked="checked">
+            <input type="radio" name="smiley" value="neutral" class="neutral">
+            <input type="radio" name="smiley" value="happy" class="happy">
+            <div>It looks like you're feeling <span id="result">happy</span> today..</div>
+        </form>
+        </form>
+        <br>
+        <br>
+        <form id="breathes">
+            <h4>How ya Breathin?</h4>
+            <input type="radio" name="breathe" value="cant" class="cant">
+            <input type="radio" name="breathe" value="can" class="can" checked="checked">
+        </form>
+        </form>
+   <br>
+      <br>
+        <form id="message">
+            <h4>Clear the air with your Senator?</h4>
+            <textarea id='messageBox' name='message' rows='4' cols='25'>Hello, Senator...</textarea>
+            <br>
+            <input type="submit" id='msgSubmit' value="Submit">
+            <br>
+        </form>
+
     </div>
-    {{!-- <div id="doughnutChart" class="chart"></div>  --}}
-</div>
 
-
-<div class="content">
-    <div id='map'></div>
-</div>
-</div>
-
-<div class="info">
-    All Data goes here..data....data...more dataaaaaaaaaaaaaaaaaaaaaaa.... you get the idea
-</div>
+    <div class="content">
+        <div id='map'></div>
+        <div class="info">
+            <div class="charts">
+                Graphs
+                <div class="semi-donut margin" style="--percentage : 30; --fill: #FF3D00 ;">
+                    Air Quality Index
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
