@@ -10,28 +10,15 @@ module.exports = function(app) {
         );
     });
 
+    app.post("/api/feedbacks", function(req, res, next) {
+        db.Feedback.create(req.body)
+        .then((result) => res.json(result))
+        .catch((err) => next(err));
+    });
 
-        // //Get Users
-        app.get('/api/users', function(req, res) {
-            db.User.findAll()
-                .then((data) => {
-                    console.log('get data: ', data)
-                    // instead of sending data back as json send to functions of graph or other functions
-                    res.json(data)
-                })
-                .catch(err => console.log(err));
-        });
-
-        // Add Users
-        app.post('/api/new', (req,res) => {
-            db.User.create({
-                aqi: req.body.aqi,
-                location: req.body.location,
-                emotion: req.body.emotion,
-                breathe: req.body.breathe,
-                name: req.body.name,
-                message: req.body.message
-            }).then(() => res.end());
-        });
-
+    app.get("/api/feedbacks", function(req, res, next) {
+        db.Feedback.findAll()
+        .then((result) => res.json(result))
+        .catch((err) => next(err));
+    });
 }
