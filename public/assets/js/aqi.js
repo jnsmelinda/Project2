@@ -9,6 +9,12 @@ function getAQI() {
             $("#aqi").val(response.aqi.aqi);
             const event = new CustomEvent('getAQI', {detail: response});
             document.dispatchEvent(event);
-        }
+        },
+        (response, status) => locationQueryError(response, status)
     );
+}
+
+function locationQueryError(response, status) {
+    console.log(`Request failed. Returned status: ${status}, response: ${JSON.stringify(response)}`);
+    $('#locationQueryError').html('Sorry, no results for that search.');
 }
