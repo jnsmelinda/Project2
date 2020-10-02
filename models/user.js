@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     const User = sequelize.define('User', {
-        airQuality: {
+        aqi: {
             type: DataTypes.STRING,
         },
         location: {
