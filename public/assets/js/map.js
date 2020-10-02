@@ -28,30 +28,33 @@ function pinSymbol(color) {
 }
 
 //Pollution Gradients
-const badpollution = [
-  "rgba(	186, 25, 60, 0)",
-  "rgba(186, 25, 60, 3)",
-  "rgba(186, 25, 60, 3)",
-  "rgba(68, 36, 113,1)",
-  "rgba(68, 36, 113,2)",
-  "rgba(255, 0, 0, 1)"
-];
-const goodpollution = [
+let goodpollution = [
   "rgba(0, 255, 255, 0)",
   "rgba(155, 248, 244,3)",
   "rgba(34,193,195,2)",
   "rgba(48, 213, 200,1)",
-  "rgba(	48, 213, 200,1)"
+  "rgba(48, 213, 200,1)"
 ];
-const mediumpollution = [
-  "rgba(102, 255, 0, 1)",
-  "rgba(244, 227, 0, 1)",
-  "rgba(249, 198, 0, 1)",
+
+let mediumpollution = [
+  "rgba(102, 255, 0, 0)",
+  "rgba(244, 227, 0, 3)",
+  "rgba(249, 198, 0, 2)",
   "rgba(255, 170, 0, 1)",
   "rgba(255, 113, 0, 1)",
   "rgba(255, 57, 0, 1)",
   "rgba(255, 0, 0, 1)"
 ];
+
+let badpollution = [
+    "rgba(202, 49, 91, 0)",
+    "rgba(122,62,119,3)",
+    "rgba(122,62,119,2)",
+    "rgba(235,37,28,2)",
+    "rgba(235,37,28,1)"
+  ];
+
+
 
 //The below is to place coordinates for the searched location and apply the headmap.
 function printAQI(event) {
@@ -60,34 +63,35 @@ function printAQI(event) {
     const heatmapData = [];
     let pollutioncircle = [];
     let rating = [];
+    let pin = [];
     if (event.detail.aqi.aqi <= 40) {
       rating = "Good";
-      pollutioncircle = "goodpollution";
-    } else if (event.detail.aqi.aqi >= 41) {
+      pollutioncircle = goodpollution;
+      pin = "#1AC8DB";
+    } else if (event.detail.aqi.aqi <= 70) {
       rating = "Unhealthy";
-      pollutioncircle = "mediumpollution";
+      pin = "#D9760D";
+      pollutioncircle = mediumpollution;
     } else {
       rating = "Hazerdous";
-      pollutioncircle = "badpollution";
+      pollutioncircle = badpollution;
+      pin = "#7A3E77";
     }
     const text =
             "AQI: " +
             event.detail.aqi.aqi +
-            " Rating: " +
-            rating +
-            " " +
+            " Rating: " + rating
             pollutioncircle;
     const latLng = new google.maps.LatLng(
       event.detail.aqi.latitude,
       event.detail.aqi.longitude
     );
-
     const tooltip = text;
     const marker = new google.maps.Marker({
       position: latLng,
       map: map,
       zoom: 12,
-      icon: pinSymbol("#1AC8DB"),
+      icon: pinSymbol(pin),
       title: tooltip
     });
     gmarkers.push(marker);
@@ -101,12 +105,11 @@ function printAQI(event) {
       })(marker, text)
     );
     heatmapData.push(latLng);
-    pollution.push(pollutioncircle);
     const heatmap = new google.maps.visualization.HeatmapLayer({
       data: heatmapData,
       dissipating: false,
       map: map,
-      gradient: pollution,
+      gradient: pollutioncircle,
       radius: 0.03,
       opacity: 0.09,
       zoom: 12

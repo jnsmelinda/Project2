@@ -9,6 +9,7 @@ function getAQI() {
             $("#aqi").val(response.aqi.aqi);
             const event = new CustomEvent('getAQI', {detail: response});
             document.dispatchEvent(event);
+            console.log(event.detail);
         }
     );
 }
