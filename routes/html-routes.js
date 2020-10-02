@@ -7,8 +7,6 @@ module.exports = function(app) {
     });
 
     app.post("/", function(req, res, next) {
-        console.log(req.body);
-
         if (req.body.emotion) {
             db.Feedback.create(req.body)
                 .then((result) => res.render("index", {location: req.body.location}))
