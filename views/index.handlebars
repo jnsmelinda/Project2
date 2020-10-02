@@ -1,46 +1,43 @@
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">V E N T</a>
 </nav>
+
 <body>
     <div class="sidebar">
         <h2> CLEAR THE AIR</h2>
         <h3> WITH YOUR REPRESENTATIVE</h3>
         <br>
 
-  <div class= "wrapper">
-        <form id="location">
-            <h4>Where do you want to Search?</h4>
-            <input type='text' id='location' placeholder='City or Zip Code'>
-            <input type="submit" id='locationsubmit' value="Submit">
-        </form>
-          </div>
+        <div class="wrapper">
+            <form id="location-form" action="/" method="POST">
+                <h4>Where do you want to Search?</h4>
+                <input id="location" name="location" type='text' placeholder='City or Zip Code' value="{{location}}">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
         <br>
         <h4>How ya Feelin?</h4>
-        <form id="smileys">
-            <input type="radio" name="smiley" value="sad" class="sad" checked="checked">
-            <input type="radio" name="smiley" value="neutral" class="neutral">
-            <input type="radio" name="smiley" value="happy" class="happy">
+        <form id="feedback-form" action="/" method="POST">
+            <input id="location-feedback" name="location" type="hidden" value="{{location}}">
+            <input id="aqi" name="aqi" type="hidden">
+            <input id="name" name="name" type="hidden" value="unkown">
+            <input type="radio" name="emotion" value="sad" class="sad" checked="checked">
+            <input type="radio" name="emotion" value="neutral" class="neutral">
+            <input type="radio" name="emotion" value="happy" class="happy">
             <div>It looks like you're feeling <span id="result">happy</span> today..</div>
-        </form>
-        </form>
-        <br>
-        <br>
-        <form id="breathes">
+            <br>
+            <br>
             <h4>How ya Breathin?</h4>
             <input type="radio" name="breathe" value="cant" class="cant">
             <input type="radio" name="breathe" value="can" class="can" checked="checked">
-        </form>
-        </form>
-   <br>
-      <br>
-        <form id="message">
+            <br>
+            <br>
             <h4>Clear the air with your Senator?</h4>
             <textarea id='messageBox' name='message' rows='4' cols='25'>Hello, Senator...</textarea>
             <br>
-            <input type="submit" id='msgSubmit' value="Submit">
+            <button type="submit">Submit</button>
             <br>
         </form>
-
     </div>
 
     <div class="content">
