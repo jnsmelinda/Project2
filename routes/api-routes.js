@@ -10,14 +10,14 @@ module.exports = function(app) {
         );
     });
 
-    app.post("/api/users", function(req, res, next) {
-        db.User.create(req.body)
+    app.post("/api/feedbacks", function(req, res, next) {
+        db.Feedback.create(req.body)
         .then((result) => res.json(result))
         .catch((err) => next(err));
     });
 
-    app.get("/api/users", function(req, res, next) {
-        db.User.findAll()
+    app.get("/api/feedbacks", function(req, res, next) {
+        db.Feedback.findAll()
         .then((result) => res.json(result))
         .catch((err) => next(err));
     });
