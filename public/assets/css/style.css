@@ -98,6 +98,7 @@ h4 {
     margin-bottom: 20px;
     position: block;
     height: 400px;
+    background-color: rgb(46,56,70);
     border: solid black;
     position: inline-block;
     width: auto;

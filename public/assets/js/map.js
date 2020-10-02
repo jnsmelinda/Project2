@@ -1,6 +1,5 @@
-/* eslint-disable prettier/prettier */
-//Gets Air Quality Index and Coordinates
 
+//Gets Air Quality Index and Coordinates
 document.addEventListener("getAQI", printAQI, false);
 
 //This sets map formatting and recenters map to new area once searched. It applies nighttime styling.
@@ -14,9 +13,9 @@ function initMap(lat = 47.6062, lon = -122.3321) {
   });
   infowindow = new google.maps.InfoWindow();
 }
+
 //Sets up marker pin info except for color.
 const gmarkers = [];
-
 function pinSymbol(color) {
   return {
     path:
@@ -28,6 +27,7 @@ function pinSymbol(color) {
     scale: 1
   };
 }
+
 
 //Pollution Gradients
 const badpollution = [
@@ -74,7 +74,12 @@ function printAQI(event) {
       title: tooltip
     });
     gmarkers.push(marker);
-
+    marker.addListener('click', (function (marker, text) {
+        return function (e) {
+            infowindow.setContent(text);
+            infowindow.open(map, marker);
+        }
+    })(marker, text));
     heatmapData.push(latLng);
     const heatmap = new google.maps.visualization.HeatmapLayer({
       data: heatmapData,
@@ -85,5 +90,6 @@ function printAQI(event) {
       opacity: 0.09,
       zoom: 12
     });
-  }
 }
+  }
+
