@@ -1,5 +1,4 @@
-
-  form#breathes input[type="radio"] {
+#feedback-form input[type="radio"] {
     -webkit-appearance: none;
     width: 70px;
     height: 120px;
@@ -11,21 +10,32 @@
             filter: grayscale(100%);
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
-  }
-  form#breathes input[type="radio"]:hover, form#breathes input[type="radio"]:checked {
+}
+#feedback-form input[type="radio"]:hover, #feedback-form input[type="radio"]:checked {
     -webkit-filter: grayscale(0);
             filter: grayscale(0);
             outline-color: -webkit-focus-ring-color;
             outline-style: auto;
+}
 
-  }
+#feedback-form input[type="radio"].happy {
+    background: url(/assets/img/Happy.png) center;
+    background-size: cover;
+}
+#feedback-form input[type="radio"].neutral {
+    background: url(/assets/img/Neutral.png) center;
+    background-size: cover;
+}
+#feedback-form input[type="radio"].sad {
+    background: url(/assets/img/Negative.png) center;
+    background-size: cover;
+}
 
-  form#breathes input[type="radio"].cant {
+#feedback-form input[type="radio"].cant {
     background: url(/assets/img/cantbreathe.png) center;
     background-size: cover;
-  }
-  form#breathes input[type="radio"].can {
+}
+#feedback-form input[type="radio"].can {
     background: url(/assets/img/canbreathe.png) center;
     background-size: cover;
-  }
-
+}
