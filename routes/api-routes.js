@@ -5,10 +5,8 @@ module.exports = function(app) {
     app.get("/api/aqi/:location", function(req, res, next) {
         getAQIByLocation(
             req.params.location,
-            (error, aqi) => {
-                if (error) next(error);
-                else res.json({aqi});
-            }
+            aqi => res.json({aqi}),
+            error => next(error)
         );
     });
 
@@ -27,10 +25,11 @@ module.exports = function(app) {
         // Add Users
         app.post('/api/new', (req,res) => {
             db.User.create({
-                name: req.body.name,
+                aqi: req.body.aqi,
                 location: req.body.location,
                 emotion: req.body.emotion,
                 breathe: req.body.breathe,
+                name: req.body.name,
                 message: req.body.message
             }).then(() => res.end());
         });

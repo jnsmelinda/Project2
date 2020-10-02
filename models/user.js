@@ -1,20 +1,19 @@
 module.exports = function (sequelize, DataTypes) {
     const User = sequelize.define('User', {
-        name: {
+        aqi: {
             type: DataTypes.STRING,
-            allowNull: false
         },
         location: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         emotion: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         breathe: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
+            type: DataTypes.STRING,
+        },
+        name: {
+            type: DataTypes.STRING,
         },
         message: {
             type: DataTypes.TEXT,

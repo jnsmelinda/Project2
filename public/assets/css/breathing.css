@@ -21,11 +21,11 @@
   }
 
   form#breathes input[type="radio"].cant {
-    background: url(/assets/img/cantbreathe.PNG) center;
+    background: url(/assets/img/cantbreathe.png) center;
     background-size: cover;
   }
   form#breathes input[type="radio"].can {
-    background: url(/assets/img/canbreathe.PNG) center;
+    background: url(/assets/img/canbreathe.png) center;
     background-size: cover;
   }
 
