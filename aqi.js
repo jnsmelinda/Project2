@@ -42,7 +42,7 @@ function getAQIByLocation(location, callback, next) {
                                 }
                                 else {
                                     const response = {
-                                        aqi: aqis[1].AQI,
+                                        aqi: aqis[aqis.length-1].AQI,
                                         longitude: longitude,
                                         latitude: latitude
                                     };
