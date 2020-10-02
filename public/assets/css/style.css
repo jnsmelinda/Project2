@@ -1,6 +1,14 @@
 .navbar-brand { font-size: 75px;
 }
 
+button {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    display: inline-block;
+}
+
 li {
     padding: 5px;
     margin: 5px;
