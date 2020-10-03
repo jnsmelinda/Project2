@@ -126,6 +126,13 @@ function printAQI(event) {
     printchart(aqi,chartcolor);
   }
   function printchart(aqi,color) {
-    document.getElementsByTagName('donut')[0].setAttribute("style", "color:" + color +  "; text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000; --percentage : " + aqi.value + "; --fill: " + color + "" +  "");
+      let aqireplace;
+
+    if (aqi <=100) {
+        aqireplace = aqi;
+      } else {
+        aqireplace = 100;
+      }
+    document.getElementsByTagName('donut')[0].setAttribute("style", "text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000; --percentage : " + aqireplace + "; --fill: " + color + "" + ";");
     document.getElementById("AQIresults").innerHTML = aqi
   }
