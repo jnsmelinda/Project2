@@ -12,9 +12,6 @@ module.exports = function (sequelize, DataTypes) {
         breathe: {
             type: DataTypes.STRING,
         },
-        name: {
-            type: DataTypes.STRING,
-        },
         message: {
             type: DataTypes.TEXT,
         }

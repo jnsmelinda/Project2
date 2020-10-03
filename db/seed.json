@@ -4,7 +4,6 @@
         "location": "Seattle",
         "emotion": "happy",
         "breathe": "can",
-        "name": "Bobby",
         "message": "No Message",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -14,7 +13,6 @@
         "location": "Seattle",
         "emotion": "neutral",
         "breathe": "can",
-        "name": "Rick",
         "message": "No Message",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -24,7 +22,6 @@
         "location": "Seattle",
         "emotion": "neutral",
         "breathe": "can",
-        "name": "Taylor",
         "message": "Dear Senator, ",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -34,7 +31,6 @@
         "location": "Seattle",
         "emotion": "sad",
         "breathe": "can",
-        "name": "Sarah",
         "message": "Hey Senator",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -44,7 +40,6 @@
         "location": "Seattle",
         "emotion": "neutral",
         "breathe": "can",
-        "name": "Joo",
         "message": "No Message",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -54,7 +49,6 @@
         "location": "San Diego",
         "emotion": "sad",
         "breathe": "can't",
-        "name": "Matt",
         "message": "No Message",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -64,7 +58,6 @@
         "location": "San Diego",
         "emotion": "happy",
         "breathe": "can't",
-        "name": "Melinda",
         "message": "No Message",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -74,7 +67,6 @@
         "location": "Portland",
         "emotion": "sad",
         "breathe": "can't",
-        "name": "Kelsey",
         "message": "No Message",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -84,7 +76,6 @@
         "location": "Portland",
         "emotion": "sad",
         "breathe": "can't",
-        "name": "David",
         "message": "Can't breathe",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -94,7 +85,6 @@
         "location": "Boise",
         "emotion": "happy",
         "breathe": "can",
-        "name": "Samantha",
         "message": "Everything is ok",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -104,7 +94,6 @@
         "location": "Chicago",
         "emotion": "happy",
         "breathe": "can",
-        "name": "Dean",
         "message": "No Message",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -114,7 +103,6 @@
         "location": "Chicago",
         "emotion": "neutral",
         "breathe": "can",
-        "name": "Brian",
         "message": "No Message",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -124,7 +112,6 @@
         "location": "Las Vegas",
         "emotion": "neutral",
         "breathe": "can",
-        "name": "Lawrence",
         "message": "No Message",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
@@ -134,7 +121,6 @@
         "location": "san francisco",
         "emotion": "sad",
         "breathe": "can't",
-        "name": "Dave",
         "message": "Please fix this!",
         "createdAt": "2020-10-01T13:23:44.000Z",
         "updatedAt": "2020-10-01T13:23:44.000Z"
