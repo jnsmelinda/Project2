@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/static/v1?label=License&message=MIT&color=green)](https://choosealicense.com/licenses/mit/)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://www.contributor-covenant.org/version/2/0/code_of_conduct/)
 
-As the result of the second group project of the bootcam we came up with the idea of VENT. It is an interactive website to help concerned citizens to see what is the air in their area and to provide a platform where they are able to express their feelings  and submit a short message to their local representative regarding the air quality.
+As the result of the second group project of the bootcamp we came up with the idea of VENT. It is an interactive website to help concerned citizens to see what is the air in their area and to provide a platform where they are able to express their feelings  and submit a short message to their local representative regarding the air quality.
 
 We utilized the [AirNOW.gov](https://www.airnow.gov/?city=Bellevue&state=WA&country=USA), [Google Maps](https://cloud.google.com/maps-platform/) and [OpenCage geocoding](https://opencagedata.com/api) APIs to pull and display air quality data and the [Civic Info](https://developers.google.com/civic-information) API to get the local representative based on the query location.
 
