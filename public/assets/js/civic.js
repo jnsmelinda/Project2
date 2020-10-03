@@ -11,40 +11,50 @@ function displayCivicInfo() {
         method: "GET"
     }).then(function(response) {
         console.log(response);
-        const civicDiv = $("<div class='civic'>");
+        const civicDiv = $('#civic');
 
-        // stores the politician's name and creates an element for their name
-        const civicName = response.officials.name;
-        const lineOne = $("<h5>").text("Name: " + civicName);
+        for(officialNum = 0; officialNum < response.officials.length; officialNum++) {
 
-        // append the politician's name
-        civicDiv.append(lineOne);
+            const civicName = response.officials[officialNum].name;
+            const lineOne = $("<h6>").text("Name: " + civicName);
 
-        // stores the politician's title and creates an element for title
-        const civicTitle = response.offices.name;
-        const lineTwo = $("<p>").text("Office: " + civicTitle);
+            civicDiv.append(lineOne);
 
-        // append the title
-        civicDiv.append(lineTwo);
 
-        // stores the party affiliation and creates an element for party
-        var civicParty = response.officials.party;
-        var lineThree = $("<p>").text("Party: " + civicParty);
+            // //const civicTitle = response.offices[officialNum].name;
+            // //const lineTwo = $("<p>").text("Office: " + civicTitle);
 
-        // append the party
-        movieDiv.append(lineThree);
+            // // append the title
+            // civicDiv.append(lineTwo);
 
-        // stores phone number and creates an element for the phone number
-        var civicPhone = response.officials.party;
-        var lineThree = $("<p>").text("Ph: " + civicPhone);
+            // // stores the party affiliation and creates an element for party
+            // const civicParty = response.officials[officialNum].party;
+            // const lineThree = $("<p>").text("Party: " + civicParty);
 
-        // append the phone number
-        movieDiv.append(lineFour);
+            // // append the party
+            // civicDiv.append(lineThree);
+
+            // // stores phone number and creates an element for the phone number
+            // const civicPhone = response.officials[officialNum].party;
+            // const lineFour = $("<p>").text("Ph: " + civicPhone);
+
+            // // append the phone number
+            // civicDiv.append(lineFour);
+
+        }
+
+
+        // for(officeNum = 0; officeNum < response.offices.length; officeNum++) {
+
+        //     // stores the politician's title and creates an element for title
+        //     const civicTitle = response.offices[officeNum].name;
+        //     const lineTwo = $("<p>").text("Office: " + civicTitle);
+
+        // }
 
     });
 }
 
-displayCivicInfo();
 
 
 
