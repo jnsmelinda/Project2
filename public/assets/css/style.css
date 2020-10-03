@@ -64,7 +64,7 @@ h4 {
     position: absolute;
     top: 116px;
     width: 320px;
-    height: 200%;
+    height: 100%;
     background: rgb(109, 122, 134);
   }
   .wrapper {
@@ -84,28 +84,42 @@ h4 {
     position: block;
 }
 
+.charts {
+    background:   rgb(52,58,64, 0.7);
+}
+
 .info {
     width: auto;
-    height: 400px;
-    position: inline-block;
-    background: rgb(52,58,64, 0.5);
+    height: 200px;
+    position: inline;
+    background: rgb(52,58,64, 0.7);
+    margin-left: 180px;
+    margin-right: 8px;
+    float: left;
 
+
+}
+.info2 {
+    width: 350px;
+    height: 200px;
+    position: inline;
+    background: black;
+    margin-left: 180px;
+    margin-right: 8px;
+    float: right;
+
+}
+
+.chart2 {
+    width: auto;
+    height: 200px;
+    position: inline;
+    background: white;
     margin-left: 180px;
     margin-right: 8px;
 }
 
-.charts {
-    width: auto;
-    height: 200px;
-    position: inline-block;
-    background: rgb(52,58,64, 0.7);
 
-}
-
-.charts2 {
-float: right;
-    background: blue;
-}
 
 /* Results from Google Map API */
 #map {

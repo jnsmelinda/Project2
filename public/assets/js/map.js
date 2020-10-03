@@ -79,10 +79,10 @@ function printAQI(event) {
     } else if (event.detail.aqi.aqi <= 70) {
       rating = "Unhealthy";
       pin = "#D9760D";
-      chartcolor = "#B18742";
+      chartcolor = "#FDFF30";
       pollutioncircle = mediumpollution;
     } else {
-      rating = "Hazerdous";
+      rating = "Hazardous";
       pollutioncircle = badpollution;
       pin = "#7A3E77";
       chartcolor = "#F40CA4"
@@ -125,7 +125,7 @@ function printAQI(event) {
     });
     printchart(aqi,chartcolor);
   }
-
   function printchart(aqi,color) {
-    document.getElementsByTagName('thing')[0].setAttribute("style", "--percentage : " + aqi.value + "; --fill: " + color + "");
+    document.getElementsByTagName('donut')[0].setAttribute("style", "color:" + color +  "; text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000; --percentage : " + aqi.value + "; --fill: " + color + "" +  "");
+    document.getElementById("AQIresults").innerHTML = aqi
   }
