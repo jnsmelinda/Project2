@@ -1,7 +1,6 @@
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">V E N T</a>
 </nav>
-
 <body>
     <div class="sidebar">
         <h2> CLEAR THE AIR</h2>
@@ -26,9 +25,8 @@
             <div>It looks like you're feeling <span id="result">happy</span> today..</div>
             <br>
             <h4>How ya Breathin?</h4>
-            <input type="radio" name="breathe" value="cant" class="cant" onclick="displayBreatheValue()">
-            <input type="radio" name="breathe" value="can" class="can" checked="checked"
-                onclick="displayBreatheValue()">
+            <input type="radio" name="breathe" value="cant" class="cant"onclick="displayBreatheValue()">
+            <input type="radio" name="breathe" value="can" class="can" checked="checked"onclick="displayBreatheValue()">
             <div>It looks like you <span id="result2">can</span> breathe today..</div>
             <br>
             <h4>Clear the air with your Senator?</h4>
@@ -40,14 +38,14 @@
     </div>
     <div class="content">
         <div id='map'>
-            <div id='mapresults'>Getting Data.....<span id="mapresult"></span> </div>
+            <div id = 'mapresults'>Getting Data.....<span id="mapresult"></span> </div>
         </div>
         <div class="info">
-            <div class="charts" >
-                <div class="semi-donut margin" name='superunique' style="--percentage : 80; --fill: #3CB4FC ;">
+            <div class="charts">
+                Graphs
+                <thing class="semi-donut margin" id='aqchart' style= "--percentage : 10; --fill: #3CB4FC";>
                     Air Quality Index
-                </div>
-
+                </thing>
             </div>
         </div>
     </div>
