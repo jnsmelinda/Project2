@@ -1,5 +1,6 @@
 // Set up Dependencies
 const express = require('express');
+const fs = require('fs/promises');
 
 // Set up the Express App
 const app = express();
@@ -24,8 +25,21 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
-db.sequelize.sync({ force: false }).then(function() {
-    app.listen(PORT, function() {
-      console.log("App listening on PORT " + PORT);
+db.sequelize.sync({ force: false }).then(() => {
+    db.Feedback.findAll().then((result) => {
+        if (result.length === 0) {
+            seed(listen);
+        }
+        else listen();
     });
-  });
+});
+
+function seed(callback) {
+    fs.readFile("db/seed.json", "utf8").then((data) =>
+        db.Feedback.bulkCreate(JSON.parse(data)).then(callback)
+    );
+}
+
+function listen() {
+    app.listen(PORT, () => console.log("App listening on PORT " + PORT));
+}
