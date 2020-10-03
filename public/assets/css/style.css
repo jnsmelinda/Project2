@@ -1,3 +1,12 @@
+
+
+@import url(//fonts.googleapis.com/css?family=Oswald:400);
+body {
+  background: #222428;
+  font-family: "Oswald", sans-serif;
+}
+
+
 .navbar-brand { font-size: 60px;
 }
 
@@ -79,7 +88,8 @@ h4 {
     width: auto;
     height: 400px;
     position: inline-block;
-    background: grey;
+    background: rgb(52,58,64, 0.5);
+
     margin-left: 180px;
     margin-right: 8px;
 }
@@ -88,7 +98,13 @@ h4 {
     width: auto;
     height: 200px;
     position: inline-block;
-    background: white;
+    background: rgb(52,58,64, 0.7);
+
+}
+
+.charts2 {
+float: right;
+    background: blue;
 }
 
 /* Results from Google Map API */
