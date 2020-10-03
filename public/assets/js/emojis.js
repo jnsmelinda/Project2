@@ -4,7 +4,7 @@ function displayEmojiValue() {
         if(ele[i].checked)
         document.getElementById("result").innerHTML
                 = ele[i].value;
-                console.log(result)
+
     }
 }
 
@@ -14,7 +14,7 @@ function displayBreatheValue() {
         if(ele[i].checked)
         document.getElementById("result2").innerHTML
                 = ele[i].value;
-                console.log(result2)
+
     }
 };
 
