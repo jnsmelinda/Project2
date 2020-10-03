@@ -4,6 +4,10 @@ document.addEventListener("getAQI", printAQI, false);
 //This sets map formatting and recenters map to new area once searched. It applies nighttime styling.
 let map;
 let infowindow;
+
+var superunique = document.getElementsByName('superunique');
+console.log(superunique);
+
 function initMap(lat = 47.6062, lon = -122.3321) {
   map = new google.maps.Map(document.getElementById("map"), {
     center: new google.maps.LatLng(lat, lon),
@@ -115,4 +119,5 @@ function printAQI(event) {
       zoom: 12
     });
   }
+  aqichart.style.setProperty("--percentage : 30; --fill: #FF3D00 ;");
 }
