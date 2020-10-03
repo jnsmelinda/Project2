@@ -8,6 +8,8 @@ body {
 
 
 .navbar-brand { font-size: 60px;
+    height: 90px;
+
 }
 
 button {
@@ -19,10 +21,11 @@ button {
 }
 
 li {
-    padding: 20px;
     margin-right: 50px;
     background: #faebd7;
     list-style-type: none;
+    font-size: 16px;
+    line-height: 30px;
   }
 
 h2 {
@@ -63,7 +66,7 @@ h4 {
   }
   .sidebar {
     position: absolute;
-    top: 116px;
+    top: 106px;
     width: 320px;
     height: 200%;
     background: rgb(109, 122, 134);
@@ -76,7 +79,7 @@ h4 {
       text-align: center;
   }
 .content {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 150px;
     margin-right: 20px;
     margin-bottom: 35px;
@@ -107,7 +110,7 @@ h4 {
     position: inline;
     background: white;
     margin-left: 530px;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 17px;
     text-align: center;
 
