@@ -7,18 +7,21 @@ As the result of the second group project of the bootcamp we came up with the id
 
 We utilized the [AirNOW.gov](https://www.airnow.gov/?city=Bellevue&state=WA&country=USA), [Google Maps](https://cloud.google.com/maps-platform/) and [OpenCage geocoding](https://opencagedata.com/api) APIs to pull and display air quality data and the [Civic Info](https://developers.google.com/civic-information) API to get the local representative based on the query location.
 
+## Project Demonstration
+![Git](readmevideo.gif)  
+
 ## Team
-- [Joo Heredia](https://github.com/djjoo007): Project setup with Sequalize and Express, Heroku deploy
+- [Joo Heredia](https://github.com/djjoo007): Project setup with Sequelize and Express, Heroku deploy
 - [Kelsey James](https://github.com/KJ-Labs): CSS, HTML, Charts, Emotions and Google Maps API
 - [Matt Wibur](https://github.com/wilbur125): Civic API, Handlebars, Responsive design
-- [Melinda Ivanov](https://github.com/jnsmelinda): Integrating AirNow and Opecage APIs and persistance layer
+- [Melinda Ivanov](https://github.com/jnsmelinda): Integrating AirNow and Opencage APIs and persistance layer
 
 ## Links
-- https://github.com/jnsmelinda/Vent
-- tbd: heroku link
+- Github: https://github.com/jnsmelinda/Vent
+- Heroku: https://vent-airquality-tracker.herokuapp.com/
 
 ## Demo
-- tbd: demo image
+- ![Git](demoimage.PNG)  
 
 ## Technologies
 - [JavaScript](https://www.javascript.com)
@@ -42,3 +45,7 @@ This repository is protected under the [MIT](https://choosealicense.com/licenses
 
 ## Contribution
 Please contribute to this project by opening a Pull Request and following the `eslint` rules and the [Code of Conduct](https://www.contributor-covenant.org/version/2/0/code_of_conduct/).
+
+## Screenshots
+![Git](screenshot.PNG)  
+Emoji and Lung Emoticons from Canva.
