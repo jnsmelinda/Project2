@@ -12,7 +12,6 @@ function displayCivicInfo() {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        console.log(response);
         const civicDiv = $('#civic');
 
         //Loops through array from JSON to get the politician's name
