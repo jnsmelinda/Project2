@@ -1,13 +1,11 @@
-//Gets Air Quality Index and Coordinates
+//Gets Air Quality Index and Coordinates from aqi.js
 document.addEventListener("getAQI", printAQI, false);
-
 
 //This sets map formatting and recenters map to new area once searched. It applies nighttime styling.
 let map;
 let infowindow;
-
-var aqchart = document.getElementById("aqchart");
-
+const aqchart = document.getElementById("aqchart");
+const gmarkers = [];
 
 function initMap(lat = 47.6062, lon = -122.3321) {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -19,7 +17,6 @@ function initMap(lat = 47.6062, lon = -122.3321) {
 }
 
 //Sets up marker pin info except for color.
-const gmarkers = [];
 function pinSymbol(color) {
   return {
     path:
@@ -33,15 +30,15 @@ function pinSymbol(color) {
 }
 
 //Pollution Gradients
-let goodpollution = [
-  "rgba(0, 255, 255, 0)",
-  "rgba(155, 248, 244,3)",
+const goodpollution = [
+  "rgba(0,255,255, 0)",
+  "rgba(155,248,244,3)",
   "rgba(34,193,195,2)",
-  "rgba(48, 213, 200,1)",
-  "rgba(48, 213, 200,1)"
+  "rgba(48,213,200,1)",
+  "rgba(48,213,200,1)"
 ];
 
-let mediumpollution = [
+const mediumpollution = [
   "rgba(102, 255, 0, 0)",
   "rgba(244, 227, 0, 3)",
   "rgba(249, 198, 0, 2)",
@@ -51,88 +48,94 @@ let mediumpollution = [
   "rgba(255, 0, 0, 1)"
 ];
 
-let badpollution = [
-    "rgba(202, 49, 91, 0)",
-    "rgba(122,62,119,3)",
-    "rgba(122,62,119,2)",
-    "rgba(235,37,28,2)",
-    "rgba(235,37,28,1)"
-  ];
+const badpollution = [
+  "rgba(202, 49, 91, 0)",
+  "rgba(122,62,119,3)",
+  "rgba(122,62,119,2)",
+  "rgba(235,37,28,2)",
+  "rgba(235,37,28,1)"
+];
 
-
-
-//The below is to place coordinates for the searched location and apply the headmap.
+//The below is to place coordinates for the searched location and apply the heatmap with the correct gradient and pin color.
 function printAQI(event) {
-    initMap(event.detail.aqi.latitude, event.detail.aqi.longitude);
-
-    const heatmapData = [];
-    let pollutioncircle = [];
-    let rating = [];
-    let chartcolor = [];
-    let pin = [];
-    let aqi = event.detail.aqi.aqi
-    if (event.detail.aqi.aqi <= 40) {
-      rating = "Good";
-      pollutioncircle = goodpollution;
-      pin = "#1AC8DB";
-      chartcolor = "#3CB4FC";
-    } else if (event.detail.aqi.aqi <= 70) {
-      rating = "Unhealthy";
-      pin = "#D9760D";
-      chartcolor = "#FDFF30";
-      pollutioncircle = mediumpollution;
-    } else {
-      rating = "Hazardous";
-      pollutioncircle = badpollution;
-      pin = "#7A3E77";
-      chartcolor = "#F40CA4"
-    }
-    const text =
-      "AQI: " +
-      event.detail.aqi.aqi +
-      " Rating: " + rating
-    pollutioncircle;
-    const latLng = new google.maps.LatLng(
-      event.detail.aqi.latitude,
-      event.detail.aqi.longitude
-    );
-    const tooltip = text;
-    const marker = new google.maps.Marker({
-      position: latLng,
-      map: map,
-      zoom: 12,
-      icon: pinSymbol(pin),
-      title: tooltip
-    });
-    gmarkers.push(marker);
-    marker.addListener(
-      "click",
-      (function (marker, text) {
-        return function (e) {
-          infowindow.setContent(text);
-          infowindow.open(map, marker);
-        };
-      })(marker, text)
-    );
-    heatmapData.push(latLng);
-    let heatmap = new google.maps.visualization.HeatmapLayer({
-      data: heatmapData,
-      dissipating: false,
-      map: map,
-      gradient: pollutioncircle,
-      radius: 0.03,
-      zoom: 12
-    });
-    printchart(aqi,chartcolor);
+  initMap(event.detail.aqi.latitude, event.detail.aqi.longitude);
+  const heatmapData = [];
+  let pollutioncircle = [];
+  let rating = [];
+  let chartcolor = [];
+  let pin = [];
+  const aqi = event.detail.aqi.aqi;
+  if (aqi <= 40) {
+    rating = "Good";
+    pollutioncircle = goodpollution;
+    pin = "#1AC8DB";
+    chartcolor = "#3CB4FC";
+  } else if (aqi <= 70) {
+    rating = "Unhealthy";
+    pin = "#D9760D";
+    chartcolor = "#FDFF30";
+    pollutioncircle = mediumpollution;
+  } else {
+    rating = "Hazardous";
+    pollutioncircle = badpollution;
+    pin = "#7A3E77";
+    chartcolor = "#F40CA4";
   }
-  function printchart(aqi,color) {
-      let aqireplace;
+  const text = "AQI: " + aqi + " Rating: " + rating;
+  pollutioncircle;
+  const latLng = new google.maps.LatLng(
+    event.detail.aqi.latitude,
+    event.detail.aqi.longitude
+  );
+  const tooltip = text;
+  const marker = new google.maps.Marker({
+    position: latLng,
+    map: map,
+    zoom: 12,
+    icon: pinSymbol(pin),
+    title: tooltip
+  });
+  gmarkers.push(marker);
+  marker.addListener(
+    "click",
+    (function(marker, text) {
+      return function(e) {
+        infowindow.setContent(text);
+        infowindow.open(map, marker);
+      };
+    })(marker, text)
+  );
+  heatmapData.push(latLng);
+  const heatmap = new google.maps.visualization.HeatmapLayer({
+    data: heatmapData,
+    dissipating: false,
+    map: map,
+    gradient: pollutioncircle,
+    radius: 0.03,
+    zoom: 12
+  });
+  printchart(aqi, chartcolor);
+};
 
-    if (aqi <=100) {
-        aqireplace = aqi;
-      } else {
-        aqireplace = 100;
-      }
-    document.getElementsByTagName('donut')[0].setAttribute("style", "text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000; --percentage : " + aqireplace + "; --fill: " + color + "" + ";");
-    document.getElementById("AQIresults").innerHTML = aqi
+//Prints the AQI values and resets the styling on the AQI chart under the map.
+function printchart(aqi, color) {
+  let aqireplace;
+  if (aqi <= 100) {
+    aqireplace = aqi;
+  } else {
+    aqireplace = 100;
   }
+  document
+    .getElementsByTagName("donut")[0]
+    .setAttribute(
+      "style",
+      "text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000; --percentage : " +
+                aqireplace +
+                "; --fill: " +
+                color +
+                "" +
+                ";"
+    );
+  document.getElementById("AQIresults").innerHTML = aqi;
+}
+

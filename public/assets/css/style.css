@@ -1,5 +1,4 @@
 
-
 @import url(//fonts.googleapis.com/css?family=Oswald:400);
 body {
   background: #222428;
@@ -25,18 +24,19 @@ li {
     background: #faebd7;
     list-style-type: none;
     font-size: 16px;
-    line-height: 30px;
+
   }
 
 h2 {
     text-align: left;
     margin-left: 10px;
-
 }
+
 h3 {
 text-align: left;
 margin-left: 10px;
 }
+
 h4 {
     font-size: 18px;
     text-align: center;
@@ -56,19 +56,21 @@ h4 {
       text-align: center;
     background-image: linear-gradient(to right, rgba(61,99,246, .5),  rgba(0,196,204 ),rgba(107,213,227) );
   }
+
   form {
     display: inline-block;
   }
-  img {
-    height: 80px;
-    width: 50%;
 
+  .img {
+    height: 60px;
+    width: 50%;
   }
+
   .sidebar {
     position: absolute;
     top: 106px;
     width: 320px;
-    height: 200%;
+    min-height: 110%;
     background: rgb(109, 122, 134);
   }
   .wrapper {
@@ -90,6 +92,7 @@ h4 {
 
 .charts {
     background:   rgb(52,58,64, 0.7);
+
 }
 
 .info {
@@ -100,31 +103,34 @@ h4 {
     margin-left: 180px;
     margin-right: 8px;
     float: left;
-
-
 }
 
-.chart2 {
+.healthtips {
     width: auto;
     height: 200px;
     position: inline;
     background: white;
     margin-left: 530px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 17px;
     text-align: center;
+    overflow: auto;
 
 }
 
-
-.sqltable {
+#records {
     width: auto;
     margin-top: 10px;
     margin-left: 180px;
     margin-right: 1px;
     height: 200px;
+    overflow: auto;
+    line-height: 20px;
+    max-height: 200px;
     position: inline;
-    background: grey;
+    color: white;
+    border:    1px,  F40CA4;
+   background-color: rgb(52,58,64, 0.7)
 
 }
 
@@ -155,10 +161,99 @@ h4 {
     position: block;
     width: auto;
 }
+
 footer {
-    margin-top: 50px;
+    margin-top: 229px;
     background-color: #343A40;
     width: auto;
-    height: 100px;
+    height: 120px;
     position: inline-block;
     }
+
+ /* Formatting for the radio buttons on emotion/breathing*/
+    #feedback-form input[type="radio"] {
+        -webkit-appearance: none;
+        width: 70px;
+        height: 110px;
+        border: none;
+        cursor: pointer;
+        -webkit-transition: border 0.2s ease;
+        transition: border 0.2s ease;
+        -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+    #feedback-form input[type="radio"]:hover, #feedback-form input[type="radio"]:checked {
+        -webkit-filter: grayscale(0);
+                filter: grayscale(0);
+                outline-color: -webkit-focus-ring-color;
+                outline-style: auto;
+    }
+
+    #feedback-form input[type="radio"].happy {
+        background: url(/assets/img/Happy.png) center;
+        background-size: cover;
+    }
+    #feedback-form input[type="radio"].neutral {
+        background: url(/assets/img/Neutral.png) center;
+        background-size: cover;
+    }
+    #feedback-form input[type="radio"].sad {
+        background: url(/assets/img/Negative.png) center;
+        background-size: cover;
+    }
+
+    #feedback-form input[type="radio"].cant {
+        background: url(/assets/img/cantbreathe.png) center;
+        background-size: cover;
+    }
+    #feedback-form input[type="radio"].can {
+        background: url(/assets/img/canbreathe.png) center;
+        background-size: cover;
+    }
+
+
+/* Formatting for the AQi Chart under the map*/
+    .margin {
+        margin: 25px;
+
+      }
+
+      .semi-donut {
+        --percentage: 0;
+        --fill: #ff0;
+        width: 300px;
+        height: 150px;
+        position: relative;
+        color: #fff;
+        font-size: 22px;
+        font-weight: 600;
+        overflow: hidden;
+        border-radius: 1px;
+        color: var(--fill);
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align: end;
+                align-items: flex-end;
+        -webkit-box-pack: center;
+                justify-content: center;
+        box-sizing: border-box;
+
+      }
+      .semi-donut:after {
+        content: '';
+        width: 300px;
+        height: 300px;
+        border: 50px solid;
+        border-color: rgba(0, 0, 0, 0.50) rgba(0, 0, 0, 0.50) var(--fill) var(--fill);
+        position: absolute;
+        border-radius: 50%;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        -webkit-transform: rotate(calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ));
+                transform: rotate(calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ));
+        -webkit-animation: fillAnimation 1s ease-in;
+                animation: fillAnimation 1s ease-in;
+      }
