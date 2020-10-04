@@ -3,9 +3,6 @@ const express = require('express');
 const fs = require('fs/promises');
 require('dotenv').config();
 
-console.log(process.env.API_KEY_AIRNOW);
-console.log(process.env.API_KEY_GEOCODE);
-
 // Set up the Express App
 const app = express();
 const PORT = process.env.PORT || 8080;
