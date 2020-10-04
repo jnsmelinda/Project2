@@ -2,7 +2,7 @@ const fetchUrl = require("fetch").fetchUrl;
 
 function getAQIByLocation(location, callback, next) {
     fetchUrl(
-        `https://api.opencagedata.com/geocode/v1/json?q=${location}&key=9bdca107dee44c8d90c4efabb9b500e4`,
+        `https://api.opencagedata.com/geocode/v1/json?q=${location}&key=${process.env.API_KEY_GEOCODE}`,
         (error, meta, body) => {
             if (error) {
                 next(error);
@@ -23,7 +23,7 @@ function getAQIByLocation(location, callback, next) {
                     const longitude = geocode.results[0].geometry.lng;
                     const latitude = geocode.results[0].geometry.lat;
                     fetchUrl(
-                        `https://airnowapi.org/aq/observation/latLong/current/?format=application/json&longitude=${longitude}&latitude=${latitude}&distance=25&API_KEY=CB278A15-984D-44A7-A2DE-AA530CDDFD69`,
+                        `https://airnowapi.org/aq/observation/latLong/current/?format=application/json&longitude=${longitude}&latitude=${latitude}&distance=25&API_KEY=${process.env.API_KEY_AIRNOW}`,
                         (error, meta, body) => {
                             if (error) {
                                 next(error);

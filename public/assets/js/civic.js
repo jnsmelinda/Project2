@@ -5,6 +5,7 @@ function displayCivicInfo() {
 
     const queryURL = "https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=" + location + "&includeOffices=true&roles=legislatorUpperBody&key=AIzaSyBI6hpyHbsOD7Qk2e2C3d0Ti5kLW59QPc4";
 
+
     // creates an AJAX call for when the location is entered by the user
     $.ajax({
         url: queryURL,
@@ -54,6 +55,7 @@ function displayCivicInfo() {
 
     });
 }
+
 
 
 
