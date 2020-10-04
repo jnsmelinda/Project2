@@ -14,6 +14,7 @@ function getAQI() {
     );
 }
 
+//Returns detailed error message to the console
 function locationQueryError(response, status) {
     console.log(`Request failed. Returned status: ${status}, response: ${JSON.stringify(response)}`);
     $('#locationQueryError').html('Sorry, no results for that search.');
