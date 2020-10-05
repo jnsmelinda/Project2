@@ -1,7 +1,7 @@
 // Set up Dependencies
 const express = require('express');
 const fs = require('fs/promises');
-if(process.env.NODE_ENV !== "production" {
+if(process.env.NODE_ENV !== "production") {
    require('dotenv').config();
 }
 
