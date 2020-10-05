@@ -1,7 +1,9 @@
-<nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">V E N T</a>
-</nav>
-<body>
+<header>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">V E N T</a>
+    </nav>
+</header>
+<aside>
     <div class="sidebar">
         <h2> CLEAR THE AIR</h2>
         <h3> WITH YOUR REPRESENTATIVE</h3>
@@ -35,34 +37,45 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+</aside>
+<main>
     <div class="content">
-        <div id='map'>
-            <div id='mapresults'>Getting Data.....<span id="mapresult">
-                    <div id='locationQueryError' type="hidden"></div>
-                </span> </div>
-        </div>
-        <div class="info">
-            <div class="charts">
-                <br>
-                <donut class="semi-donut margin" style="--percentage : 10 ; --fill: #3CB4FC" ;>
-                    <div>Air Quality Index: <span id="AQIresults"></span></div>
-                </donut>
+        <figure>
+            <div id='map'>
+                <div id='mapresults'>Getting Data.....<span id="mapresult">
+                        <div id='locationQueryError' type="hidden"></div>
+                    </span> </div>
             </div>
-        </div>
-        <div class="healthtips">
-            <br>
-            <div>General Health Tips<span id="healthtips"></span>
-                <ul>
+        </figure>
+        <figure>
+            <div class="info">
+                <div class="charts">
                     <br>
-                    <li>If you start to feel respiratory discomfort, consider
-                        reducing the intensity of your outdoor activities.
-                        <br><br> Limit the time you spend near busy roads, construction sites, and other
-                        sources of
-                        smoke.</li>
-                </ul>
+                    <donut class="semi-donut margin" style="--percentage : 10 ; --fill: #3CB4FC" ;>
+                        <div>Air Quality Index: <span id="AQIresults"></span></div>
+                    </donut>
+                </div>
             </div>
-        </div>
-        <div id="records"><br></div>
+        </figure>
+        <section>
+            <div class="healthtips">
+                <br>
+                <div>General Health Tips<span id="healthtips"></span>
+                    <ul>
+                        <br>
+                        <li>If you start to feel respiratory discomfort, consider
+                            reducing the intensity of your outdoor activities.
+                            <br><br> Limit the time you spend near busy roads, construction sites, and other
+                            sources of
+                            smoke.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="records"><br></div>
+        </section>
     </div>
-    <footer></footer>
-</body>
+</main>
+<footer></footer>
+
