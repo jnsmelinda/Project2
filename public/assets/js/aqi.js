@@ -1,12 +1,13 @@
 $(document).ready(getAQI);
 
+// calls our API with the with location entered or Seattle
 function getAQI() {
-    const location = $("#location").val().trim() || "Seattle";
-    $("#location").val(location);
-    $("#location-feedback").val(location);
+    const location = $('#location').val().trim() || 'Seattle';
+    $('#location').val(location);
+    $('#location-feedback').val(location);
     $.ajax({url: `/api/aqi/${location}`}).then(
         function(response) {
-            $("#aqi").val(response.aqi.aqi);
+            $('#aqi').val(response.aqi.aqi);
             const event = new CustomEvent('getAQI', {detail: response});
             document.dispatchEvent(event);
         },
@@ -14,7 +15,7 @@ function getAQI() {
     );
 }
 
-//Returns detailed error message to the console
+// Returns detailed error message to the console
 function locationQueryError(response, status) {
     console.log(`Request failed. Returned status: ${status}, response: ${JSON.stringify(response)}`);
     $('#locationQueryError').html('Sorry, no results for that search.');
