@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
     const Feedback = sequelize.define('Feedback', {
         aqi: {
             type: DataTypes.STRING,

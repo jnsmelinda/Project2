@@ -1,4 +1,4 @@
-const fetchUrl = require("fetch").fetchUrl;
+const fetchUrl = require('fetch').fetchUrl;
 
 function getAQIByLocation(location, callback, next) {
     fetchUrl(
@@ -6,41 +6,36 @@ function getAQIByLocation(location, callback, next) {
         (error, meta, body) => {
             if (error) {
                 next(error);
-            }
-            else if (meta.status !== 200) {
+            } else if (meta.status !== 200) {
                 const error = new Error(JSON.stringify(meta));
                 error.status = meta.status;
                 next(error);
-            }
-            else {
+            } else {
                 const geocode = JSON.parse(body);
                 if (geocode.total_results === 0) {
                     const error = new Error(`${location} not found`);
                     error.status = 404;
                     next(error);
-                }
-                else {
+                } else {
                     const longitude = geocode.results[0].geometry.lng;
                     const latitude = geocode.results[0].geometry.lat;
                     fetchUrl(
+                        // eslint-disable-next-line max-len
                         `https://airnowapi.org/aq/observation/latLong/current/?format=application/json&longitude=${longitude}&latitude=${latitude}&distance=25&API_KEY=${process.env.API_KEY_AIRNOW}`,
                         (error, meta, body) => {
                             if (error) {
                                 next(error);
-                            }
-                            else if (meta.status !== 200) {
+                            } else if (meta.status !== 200) {
                                 const error = new Error(JSON.stringify(meta));
                                 error.status = meta.status;
                                 next(error);
-                            }
-                            else {
+                            } else {
                                 const aqis = JSON.parse(body.toString());
                                 if (aqis.length === 0 ) {
                                     const error = new Error(`AQI for ${longitude}, ${latitude} not found`);
                                     error.status = 404;
                                     next(error);
-                                }
-                                else {
+                                } else {
                                     const response = {
                                         aqi: aqis[aqis.length-1].AQI,
                                         longitude: longitude,
