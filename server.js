@@ -34,6 +34,7 @@ db.sequelize.sync({force: false}).then(() => {
     });
 });
 
+// seeding the database if it's empty
 function seed(callback) {
     fs.readFile('db/seed.json', 'utf8').then((data) =>
         db.Feedback.bulkCreate(JSON.parse(data)).then(callback)

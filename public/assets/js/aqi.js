@@ -1,5 +1,6 @@
 $(document).ready(getAQI);
 
+// calls our API with the with location entered or Seattle
 function getAQI() {
     const location = $('#location').val().trim() || 'Seattle';
     $('#location').val(location);

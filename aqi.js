@@ -1,5 +1,7 @@
 const fetchUrl = require('fetch').fetchUrl;
 
+// calling for the opencage api to get the coordinates of the entered location, then calling the airNow API with coordinates to
+// get the air quality index.
 function getAQIByLocation(location, callback, next) {
     fetchUrl(
         `https://api.opencagedata.com/geocode/v1/json?q=${location}&key=${process.env.API_KEY_GEOCODE}`,
