@@ -36,7 +36,13 @@ We utilized the [AirNOW.gov](https://www.airnow.gov/?city=Bellevue&state=WA&coun
 - [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping)
 
 ## Installation
-At first, you need to have [node.js](https://nodejs.org/) installed, then you need to install the required modules by running `npm install` in the command-line and start your mySQL database.
+At first, you need to have [node.js](https://nodejs.org/) installed, then you need to install the required modules by running `npm install` in the command-line and start your mySQL database. You also need to add a `.env` file to the root folder add your own api keys like this: 
+
+`API_KEY_GEOCODE={your API key goes here}`
+`API_KEY_AIRNOW={your API key goes here}`
+
+Resources:
+[AirNOW.gov](https://www.airnow.gov/), [OpenCage geocoding](https://opencagedata.com/)
 
 ## Usage
 Visit the heroku link and add query a location where you want to see the air quality index. The location will appear on the map with the color-coded pin. Then you have an option to leave some feedback about your the air quality you experience and message to your local representative.
